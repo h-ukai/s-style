@@ -1,0 +1,4 @@
+dispatch:
+- url: "*/tasks/*"
+  module: default
+

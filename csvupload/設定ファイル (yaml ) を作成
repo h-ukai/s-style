@@ -1,0 +1,39 @@
+﻿設定ファイル (yaml ) を作成
+
+cmd.exe を起動し、appcfg.py で create_bulkloader_config を実行します。
+
+cd c:\appengine-python-sdk-1.5.2
+appcfg.py create_bulkloader_config --url=http://{appId}.appspot.com/remote_api
+ --application={appId} --filename=config.yml
+High Replicationの場合は、–application の引数のアタマに s~ をつけないといけないみたいです。
+こんな風に。
+
+cd c:\appengine-python-sdk-1.5.2
+appcfg.py create_bulkloader_config --url=http://{appId}.appspot.com/remote_api
+ --application=s~{appId} --filename=config.yml
+
+自動生成されたconfig.yml には、そのとき appengine側に存在する kind のスキーマを反映したものになっているようです。
+
+アップロード/ダウンロードするkindが限定されている場合などは、このymlファイルを編集して対象kindだけのymlファイルを作っても良い。
+
+自動生成されたymlファイルは、TODO: の記述がいくつかあり、ココを適宜修正する必要があります。
+最低でもconnector (と connector_options )を編集します。
+
+  connector: # TODO: Choose a connector here: csv, simplexml, etc...
+  connector_options:
+    # TODO: Add connector options here--these are specific to each connector.
+↓
+  connector: csv
+  connector_options:
+    encoding: utf-8  
+CSV アップロード
+
+ダウンロードするには、こんな感じ。
+
+appcfg.py download_data --filename=test2.csv --config_file=test.yml
+ --url=http://{appId}.appspot.com/remote_api --application=s~{appId} --kind={ClassNameOfKind} -v
+
+アップロードはこんな感じ。
+
+appcfg.py upload_data --filename=test.csv --config_file=test.yml
+ --url=http://{appId}.appspot.com/remote_api --application=s~{appId} --kind={ClassNameOfKind} -v

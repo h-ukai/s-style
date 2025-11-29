@@ -1,0 +1,362 @@
+/*千種区のお店*/
+
+body, font {
+	font-size: 14px;
+	line-height: 1.6em;
+	margin: 0px;
+	font-family: 'Lucida Grande', 'Hiragino Kaku Gothic ProN', 'ヒラギノ角ゴ ProN W3', Meiryo, "メイリオ", sans-serif;
+}
+img {
+	border: none;
+	margin: 0px;
+}
+a:hover {
+	border: none;
+	margin: 0px;
+	filter: alpha(opacity=70); opacity: 0.70;
+}
+li {
+	list-style-type: none;
+}
+#Wrapper {
+	height: auto;
+	width: 100%;
+	display: block;
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	background-position: center top;
+}
+
+
+
+#CenterColumn {
+	height: auto;
+	width: 903px;
+	display: block;
+	padding: 0px;
+	overflow: hidden;
+	background-position: center top;
+	background-color: #FFF;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	box-shadow: 0px 0px 10px rgba(0,0,0,0.6);
+}
+
+/*HeadBox*/
+#HeadBox {
+	height: 100px;
+	width: 903px;
+	display: block;
+	padding: 0px;
+	overflow: hidden;
+	background-position: center top;
+	background-image: url(../../cmn_img/back-head.jpg);
+	margin: 0px;
+}
+#HeadBox h1 {
+	font-size: 12px;
+	line-height: 1.5em;
+	color: #999;
+	display: block;
+	padding: 0px;
+	margin-top: 15px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 170px;
+	text-align: left;
+	font-weight: normal;
+}
+#HeadBox .ProfileButton {
+	display: inline-block;
+	padding: 0px;
+	margin-top: 20px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 745px;
+	overflow: hidden;
+}
+
+/*MenuBox*/
+#MenuBox {
+	width: 903px;
+	display: block;
+	padding: 0px;
+	overflow: hidden;
+	margin: 0px;
+}
+#MenuBox li {
+	display: inline-block;
+	padding: 0px;
+	overflow: hidden;
+	margin: 0px;
+	float: left;
+}
+
+/*Head-Taberu*/
+#Head-Taberu {
+	width: 903px;
+	display: block;
+	padding: 0px;
+	overflow: hidden;
+	background-image: url(../cmn_img/head_taberu.jpg);
+	background-repeat: no-repeat;
+	height: 145px;
+	margin: 0px;
+}
+
+/*ChikuMenuBox*/
+#ChikuMenuBox {
+	width: 903px;
+	display: block;
+	overflow: hidden;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 40px;
+	margin-left: -1px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+#ChikuMenuBox .Active a {
+	width: 125px;
+	display: block;
+	overflow: hidden;
+	margin-top: -7px;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+	height: 33px;
+	float: left;
+	background: rgb(196,98,0); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2M0NjIwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZjc5MjYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(196,98,0,1) 0%, rgba(255,121,38,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(196,98,0,1)), color-stop(100%,rgba(255,121,38,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(196,98,0,1) 0%,rgba(255,121,38,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(196,98,0,1) 0%,rgba(255,121,38,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(196,98,0,1) 0%,rgba(255,121,38,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(196,98,0,1) 0%,rgba(255,121,38,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c46200', endColorstr='#ff7926',GradientType=0 ); /* IE6-8 */
+	font-size: 17px;
+	line-height: 1.5em;
+	font-weight: bold;
+	color: #FFF;
+	text-align: center;
+	padding-top: 17px;
+	padding-right: 0px;
+	padding-left: 0px;
+	border-radius: 5px;
+	text-decoration: none;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+#ChikuMenuBox .Link a {
+	width: 125px;
+	display: block;
+	overflow: hidden;
+	margin-top: -7px;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+	height: 33px;
+	float: left;
+	background: rgb(255,255,255); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIyJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlYWUzYzAiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 2%, rgba(234,227,192,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(2%,rgba(255,255,255,1)), color-stop(100%,rgba(234,227,192,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 2%,rgba(234,227,192,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 2%,rgba(234,227,192,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 2%,rgba(234,227,192,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 2%,rgba(234,227,192,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eae3c0',GradientType=0 ); /* IE6-8 */
+	font-size: 17px;
+	line-height: 1.5em;
+	font-weight: bold;
+	color: #f08300;
+	text-align: center;
+	padding-top: 17px;
+	padding-right: 0px;
+	padding-left: 0px;
+	border-radius: 5px;
+	text-decoration: none;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
+
+
+/*項目*/
+.koumokuBox {
+	width: 810px;
+	display: block;
+	overflow: hidden;
+	margin-top: 10px;
+	margin-right: auto;
+	margin-bottom: 15px;
+	margin-left: auto;
+	padding: 20px;
+	height: auto;
+	clear: both;
+	border: 3px solid #CCC;
+}
+.koumokuBox .leftBox {
+	width: 520px;
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	height: auto;
+	margin: 0px;
+	float: left;
+}
+.koumokuBox .leftBox h2 {
+	font-size: 25px;
+	line-height: 1.3em;
+	font-weight: bold;
+	color: #f08300;
+	display: block;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #999;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+	overflow: hidden;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 3px;
+	padding-left: 0px;
+}
+.koumokuBox .leftBox p {
+	font-size: 14px;
+	line-height: 1.5em;
+	display: block;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	overflow: hidden;
+}
+.koumokuBox .leftBox .Map {
+	font-size: 14px;
+	line-height: 1.5em;
+	display: inline-block;
+	overflow: hidden;
+	background-color: #f08300;
+	font-weight: bold;
+	color: #FFF;
+	text-decoration: none;
+	padding-top: 2px;
+	padding-right: 10px;
+	padding-bottom: 1px;
+	padding-left: 10px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	float: right;
+}
+.koumokuBox .leftBox .Point {
+	font-size: 14px;
+	line-height: 1.5em;
+	display: inline-block;
+	overflow: hidden;
+	background-image: url(../cmn_img/icon_point.png);
+	background-repeat: no-repeat;
+	background-position: 10px center;
+	border: 1px solid #f08300;
+	color: #f08300;
+	font-weight: bold;
+	text-align: left;
+	padding-top: 10px;
+	padding-right: 5px;
+	padding-bottom: 10px;
+	padding-left: 85px;
+	border-radius: 12px;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	clear: both;
+	width: 82%;
+}
+.koumokuBox .RightBox {
+	width: 270px;
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	height: auto;
+	float: right;
+	margin-top: 5px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+
+
+/*Footer*/
+#FooterBox {
+	display: block;
+	width: 100%;
+	margin-top: 50px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	overflow: hidden;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #999;
+	padding-top: 20px;
+	padding-right: 0px;
+	padding-bottom: 20px;
+	padding-left: 0px;
+	background-color: #faf3eb;
+}
+#FooterBox ul {
+	display: inline-block;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 5px;
+	margin-bottom: 0px;
+	margin-left: 20px;
+	overflow: hidden;
+	float: left;
+}
+#FooterBox li a {
+	display: block;
+	overflow: hidden;
+	font-size: 13px;
+	line-height: 1.5em;
+	text-decoration: none;
+	color: #f08300;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #f08300;
+	margin: 0px;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	background-image: url(https://s-style.appspot.com/cmn_img/yajirushi-next.gif);
+	background-repeat: no-repeat;
+	background-position: left center;
+	text-indent: 12px;
+}
+
+
+
+/*トップへ戻るボタン　Back to top button */
+#back-top {
+    position: fixed;
+    bottom: 15%;
+    right: -2px;
+}
+#back-top a:hover{
+	filter: alpha(opacity=70);
+	opacity: 0.7;
+}

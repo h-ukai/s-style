@@ -1,0 +1,289 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "https://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+
+<html lang="ja" xml:lang="ja" xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css" />
+<title>名古屋市千種区の不動産情報S-Styleへ！</title>
+<style type="text/css">
+a:link { color: #ff6905; text-decoration: underline; }
+a:hover { color: #6a6a6a; }
+a:active { color: red; }
+</style>
+<script type="text/javascript">
+function submitFnc(){
+  //formオブジェクトを取得する
+  var fm = document.getElementById("myform");
+ 
+  
+  //Submit値を操作したい場合はこんな感じでできます。
+  fm.new_regist_v.value = "検査済";  // 例）name="hid1"の値を"hoge"にする
+ 
+  //Submit形式指定する（post/get）
+  fm.method = "post";  // 例）POSTに指定する
+ 
+ 
+  //Submit実行
+  //fm.submit();
+}
+
+</script>
+</head>
+
+<body>
+<div style="background-color:#f4efd4">
+<div style="text-align:center; background-color:#c8911c; font-size:xx-small; ">
+名古屋市千種区の不動産査定・ﾏﾝｼｮﾝのご相談はｴｽｽﾀｲﾙへ</div>
+<div style="text-align:center; background-color:#ffffff">
+<a href="https://www.s-style.ne.jp/mobile/"><img src="https://www.s-style.ne.jp/mobile/cmn_img/logo.gif" alt="" height="35" width="104" border="0" /></a></div>
+<hr style="width:100%;height:1px;margin:2px 0;padding:0;" size="1" />
+<br />
+<div style="text-align:center; background-color:#d2ad60; font-size:xx-small">
+<span style="color:white;">▽</span><span style="color:black;">お問い合わせフォーム</span><span style="color:white;">▽</span></div>
+<div style="text-align:center; font-size:xx-small">
+<br />
+
+{% if submit %}
+<center>
+<br />
+
+<b>送信完了</b><br />
+<br />
+お問い合せありがとうございました。<br />
+追ってご連絡差し上げますので、しばらくお待ちください。<br />
+
+</center>
+{% endif %}
+{% if not submit %}
+
+<form action="form.html" method="" name="myform" id="myform">
+
+以下のフォームからご登録頂いたお客様には、<br />
+<span class="class-red">ホームページには載っていない不動産物件を特別にご紹介致します！</span><br />
+<br />
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#7e7e7e">
+<tr>
+<td class="class14b-white" align="left" bgcolor="#ff8311">ご購入希望条件（色付きの項目には必ずご記入ください）</td>
+</tr>
+<tr>
+<td align="left" bgcolor="#f5e3a5">希望物件の種別<br />
+<input type="radio" name="希望物件の種別" value="土地" />土地<br />
+<input type="radio" name="希望物件の種別" value="新築住宅" />新築住宅<br />
+<input type="radio" name="希望物件の種別" value="中古住宅" />中古住宅<br />
+<input type="radio" name="希望物件の種別" value="中古マンション・収益ビルマンション" />中古マンション<br />
+<input type="radio" name="希望物件の種別" value="収益不動産（ビル・マンション・アパート）" />収益不動産<br />
+（ビル・マンション・アパート）</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5">ご希望のエリアを入力して下さい<br />
+■第1希望<br />
+<input type="text" name="ご希望のエリア-第1希望" size="40" /><br />
+<span class="class-darkblue">■第2希望</span><br />
+<input type="text" name="ご希望のエリア-第2希望" size="40" /><br />
+<span class="class-darkblue">■第3希望</span><br />
+<input type="text" name="ご希望のエリア-第3希望" size="40" /><br />
+<span class="class-darkblue">■第4希望</span><br />
+<input type="text" name="ご希望のエリア-第4希望" size="40" /><br />
+<span class="class-darkblue">■第5希望</span><br />
+<input type="text" name="ご希望のエリア-第5希望" size="40" /><br />
+</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="white">ご予算<br />
+<input type="hidden" name="ご予算" /> <select name="ご予算">
+<option value="1,000万円以下">1,000万円以下</option>
+<option value="1,000万円台">1,000万円台</option>
+<option value="2,000万円台">2,000万円台</option>
+<option value="3,000万円台">3,000万円台</option>
+<option value="4,000万円台">4,000万円台</option>
+<option value="5,000万円以上">5,000万円以上</option>
+</select></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="white">ペットが飼える物件を希望<br />
+<input type="hidden" name="ペットが飼える物件" /> <input type="checkbox" name="ペットが飼える物件" value="希望します" />ペットが飼える物件のみを希望します。</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="white">ご意見・ご要望<br />
+※（記入例）築20年以内、駅から徒歩10分以内の物件を希望します<br />
+<input type="hidden" name="ご意見・ご要望" /> <textarea name="ご意見・ご要望" rows="6" cols="43">
+</textarea><br />
+</td>
+</tr>
+</table>
+<br />
+<table border="0" cellspacing="1" cellpadding="5" bgcolor="#7e7e7e">
+<tr>
+<td class="class14b-white" align="left" bgcolor="#ff8311">お客様のご連絡先（色付きの項目には必ずご記入ください）</td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5">お名前（漢字）<input type="hidden" name="お名前（漢字）" /> <input type="text" name="お名前（漢字）" size="20" /></td>
+</tr>
+<tr>
+<td align="left" valign="top" nowrap="nowrap" bgcolor="#f5e3a5">お名前（フリガナ）<br />
+<span class="class10">※全角カタカナ<input type="hidden" name="お名前（フリガナ）" /> <input type="text" name="お名前（フリガナ）" size="20" /></span></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5" width="120">Eメールアドレス 
+<span class="class10">※半角英数字<br />
+<input type="hidden" name="メールアドレス" /> <input type="text" name="メールアドレス" size="46" /><br />
+<input type="hidden" name="最新物件情報の送信" /> <input type="checkbox" name="最新物件情報の送信" value="希望します" /> 最新物件情報の送信<br />
+弊社からのを希望します。</span></td>
+</tr>
+<tr valign="top">
+<td align="left" bgcolor="#f5e3a5">性別<input type="hidden" name="性別" /> <input type="radio" name="性別" value="男性" />男性　 <input type="radio" name="性別" value="女性" />女性　<input type="hidden" name="お電話番号" /></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5">お電話番号　<span class="class10">※半角数字<br />
+<input type="text" name="お電話番号" size="15" /></span></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="white">FAX番号　<span class="class10">※半角数字<br />
+<input type="hidden" name="FAX番号" /> <input type="text" name="FAX番号" size="15" /></span></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5">郵便番号　<span class="class10">※半角数字（7桁）<br />
+<span class="class-ligthgray"><span class="class10">（記入例）4648021<br />
+</span><input type="hidden" name="郵便番号" /> <input type="text" name="郵便番号" size="7" /></span></span></td>
+</tr>
+<tr valign="top">
+<td align="left" bgcolor="#f5e3a5">ご住所 <span class="class10">※都道府県</span><br />
+<input type="hidden" name="ご住所" /> <input type="hidden" name="ご住所" /> <input type="hidden" name="ご住所" /> <input type="hidden" name="ご住所" /> <select name="県名">
+<option value="">選択してください</option>
+<option value="北海道" >北海道</option>
+<option value="青森県" >青森県</option>
+<option value="岩手県" >岩手県</option>
+<option value="宮城県" >宮城県</option>
+<option value="秋田県" >秋田県</option>
+<option value="山形県" >山形県</option>
+<option value="福島県" >福島県</option>
+<option value="茨城県" >茨城県</option>
+<option value="栃木県" >栃木県</option>
+<option value="群馬県" >群馬県</option>
+<option value="埼玉県" >埼玉県</option>
+<option value="千葉県" >千葉県</option>
+<option value="東京都" >東京都</option>
+<option value="神奈川県" >神奈川県</option>
+<option value="新潟県" >新潟県</option>
+<option value="富山県" >富山県</option>
+<option value="石川県" >石川県</option>
+<option value="福井県" >福井県</option>
+<option value="山梨県" >山梨県</option>
+<option value="長野県" >長野県</option>
+<option value="岐阜県" >岐阜県</option>
+<option value="静岡県" >静岡県</option>
+<option value="愛知県" >愛知県</option>
+<option value="三重県" >三重県</option>
+<option value="滋賀県" >滋賀県</option>
+<option value="京都府" >京都府</option>
+<option value="大阪府" >大阪府</option>
+<option value="兵庫県" >兵庫県</option>
+<option value="奈良県" >奈良県</option>
+<option value="和歌山県">和歌山県</option>
+<option value="鳥取県" >鳥取県</option>
+<option value="島根県" >島根県</option>
+<option value="岡山県" >岡山県</option>
+<option value="広島県" >広島県</option>
+<option value="山口県" >山口県</option>
+<option value="徳島県" >徳島県</option>
+<option value="香川県" >香川県</option>
+<option value="愛媛県" >愛媛県</option>
+<option value="高知県" >高知県</option>
+<option value="福岡県" >福岡県</option>
+<option value="佐賀県" >佐賀県</option>
+<option value="長崎県" >長崎県</option>
+<option value="熊本県" >熊本県</option>
+<option value="大分県" >大分県</option>
+<option value="宮崎県" >宮崎県</option>
+<option value="鹿児島県" >鹿児島県</option>
+<option value="沖縄県" >沖縄県</option>
+</select><br />
+※市町村<br />
+<input type="text" name="市町村" size="40" /><br />
+※号・番地<br />
+<input type="text" name="号・番地" size="30" /><br />
+マンション名など<br />
+<span class="class10"><input type="text" name="マンション名など" size="30" /></span></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="white">生年月日西暦<br />
+<input type="hidden" name="生年月日" /> <input type="hidden" name="生年月日" /> <input type="hidden" name="生年月日" /> <input type="text" name="生年月日-年" size="4" /><span class="class10">年</span> <input type="text" name="生年月日-月" size="2" /><span class="class10">月</span> <input type="text" name="生年月日-日" size="2" /><span class="class10">日</span></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5">ご希望のご連絡方法
+<br />
+<span class="class10">※複数選択可<br />
+（必ずひとつはお選びください）<br />
+</span><input type="hidden" name="ご希望のご連絡方法" /> <input type="checkbox" name="ご希望のご連絡方法" value="E-mail" />E-mail<br />
+<input type="hidden" name="ご希望のご連絡方法" /> <input type="checkbox" name="ご希望のご連絡方法" value="TEL" />TEL<br />
+<input type="hidden" name="ご希望のご連絡方法" /> <input type="checkbox" name="ご希望のご連絡方法" value="FAX" />FAX<br />
+<input type="hidden" name="ご希望のご連絡方法" /> <input type="checkbox" name="ご希望のご連絡方法" value="郵便" />郵便<br />
+ご希望時間帯<br />
+<input type="hidden" name="ご希望のご連絡方法" /> <input type="text" name="ご希望時間帯" size="10" /></td>
+</tr>
+<tr>
+<td align="left" valign="top" bgcolor="#f5e3a5">「S-Styleのホームページ」を何でお知りになりましたか？<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="知人の紹介" />知人の紹介<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="名刺" />名刺<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="新聞折込チラシ" />新聞折込チラシ<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="新聞紙面広告" />新聞紙面広告<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="住宅情報誌" />住宅情報誌<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="看板" />看板<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="地下鉄広告" />地下鉄広告<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="メール広告" />メール広告<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="ダイレクトメール" />ダイレクトメール<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="ブログ" />ブログ<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="検索エンジン" />検索エンジン<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="text" name="「S-Styleのホームページ」を何でお知りになりましたか？" size="10" /><br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="ポータルサイト" />ポータルサイト<br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="text" name="「S-Styleのホームページ」を何でお知りになりましたか？" size="15" /><br />
+<input type="hidden" name="「S-Styleのホームページ」を何でお知りになりましたか？" /> <input type="checkbox" name="「S-Styleのホームページ」を何でお知りになりましたか？" value="その他" />その他　</td>
+</tr>
+</table>
+<br />
+<br />
+<div id="SendMil01">
+<input type="hidden" name="new_regist_v" id="new_regist_v" value=""/>
+<input type="submit" name="new_regist" value="送信" onclick="submitFnc();"/>
+</div>
+</form>
+
+{% endif %}
+
+<br />
+<font size="-2"></font></div>
+<br />
+<div style="text-align:center; font-size:xx-small; background-color:#ffffff">
+<span style="color:#f1af00;">●</span><a href="https://www.s-style.ne.jp/mobile/">ﾄｯﾌﾟﾍﾟｰｼﾞへもどる</a><span style="color:#f1af00;">●</span></div>
+<hr style="width:100%;height:1px;margin:2px 0;padding:0;" size="1" />
+<br />
+<div style="text-align:center; background-color:#d2ad60; font-size:xx-small">
+<span style="color:white;">▽</span><span style="color:black;">当社のご紹介</span><span style="color:white;">▽</span></div>
+<div style="text-align:center; font-size:xx-small">
+<font size="-2">株式会社 S-Style </font><br />
+<font size="-4">〒464-0821<br />
+名古屋市千種区末盛通一丁目1番地弘法屋本店ビル3Ｂ<br />
+<a href="tel:0527515900">TEL 052-751-5900</a><br />
+	FAX 052-751-8100 </font></div>
+<br />
+<div style="text-align:center; background-color:#ffffff; font-size:xx-small">
+<span style="color:#f1af00;">●</span><a href="https://www.s-style.ne.jp/mobile/profile/">当社の特徴</a><span style="color:#f1af00;">●</span><br />
+<div style="text-align:center; background-color:#ffffff; font-size:xx-small">
+<span style="color:#f1af00;">●</span><a href="https://www.s-style.ne.jp/mobile/map/">当社案内図はｺﾁﾗ</a><span style="color:#f1af00;">●</span>
+<hr style="width:100%;height:1px;margin:2px 0;padding:0;" size="1" />
+<span style="color:#f1af00;">●</span><a href="https://www.s-style.ne.jp/mobile/privacy/">当ｻｲﾄのご利用規約</a><span style="color:#f1af00;">●</span></div>
+<br />
+<div style="text-align:center; background-color:#ffffff; font-size:xx-small">
+<span style="color:#ff6905;">当ｻｲﾄに掲載の物件は一部です！</span><br />
+<span style="color:#152d88;">ご希望の物件が見つからない場合は直接お問合せ下さい</span><br />
+<span style="color:#f1af00;">●</span><a href="https://www.s-style.ne.jp/mobile/form/">お問合せはｺﾁﾗ</a><span style="color:#f1af00;">●</span><br />
+<span style="color:#f1af00;">●</span><a href="tel:0527515900">TEL 052-751-5900</a><span style="color:#f1af00;">●</span></div>
+<br />
+<div style="text-align:center; background-color:#c8911c;; font-size:xx-small">
+<font size="-3"><span style="color:white;">Copyright(C)2006 S-Style All rights reserved.</span></font></div>
+</div>
+</div>
+</body>
+
+</html>

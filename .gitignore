@@ -1,0 +1,39 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.log
+
+# Google App Engine
+*.datastore
+*.filestub
+*.searchindexes
+testdatapath
+
+# IDE
+.vscode/
+.settings/
+.project
+.pydevproject
+*.bak
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary files
+*.tmp
+*~
+*.skrold
+
+# Large CSV files
+csvupload/*.csv
+
+# Backup files
+*コピー*/
+* - コピー*/

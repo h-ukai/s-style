@@ -1,0 +1,15 @@
+backends:
+- name: memdb
+  class: B2
+  instances: 1
+  options: dynamic
+- name: memdb2
+  class: B2
+  instances: 1
+  options: dynamic
+#- name: crawler
+#  instances: 1
+#- name: worker
+#  options: failfast
+#- name: cmdline
+#  options: dynamic

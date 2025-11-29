@@ -1,0 +1,296 @@
+全体方針（最終版 v1.0）
+0. 目的と原則
+
+目的：Python2.7 + 旧GAE依存のアプリを、Python 3.11 / Flask / NDB / GCS / SMTP / Cloud Tasks 構成に一気に再設計し、長期安定運用を実現する。
+
+原則
+
+ラッパー/互換層での延命はしない（webapp2 や wrap_wsgi_app は廃止）。
+
+URL/テンプレ変数の互換は最大限維持（ユーザー向けの見た目/導線は変えない）。
+
+**内部I/Fは分離（services層）**し、将来の交換性（NDB⇔Datastore、Redis⇔GCS等）を確保。
+
+セキュリティ/監査を現代標準に合わせて強化（OIDC、CSRF、CORS最小化、構造化ログ）。
+
+1. ランタイム／デプロイ
+
+GAE Standard / Python 3.11
+
+Flask 採用（webapp2廃止）。
+
+Entrypoint：gunicorn -b :$PORT main:app（main.py は create_app() で Flask を組み立て）。
+
+サービス分割（任意）：default（フロント）／tasks（内部）等。将来のCloud Run移行も視野に、依存を疎結合化。
+
+IaC：app.yaml（サービス別に複数可）、cron.yaml（必要なら）、dispatch.yaml（※dispach.yaml 誤記に注意）。
+
+2. ディレクトリ構成
+/app
+  /blueprints
+    public.py    # /, /index.html, /index2.html, /show/<path:rest>, /form/*, /auth/setsid, /editwhatsnew, /allblobdelete(管理)
+    api.py       # /api/... （旧 _myjson の機能をJSON APIに分解）
+    tasks.py     # /tasks/... （Cloud Tasks/ Cron 用POSTエンドポイント, OIDC検証）
+  /services      # jcache, auth, http, time, mail などのビジネスロジック層
+  /models        # NDBモデル（jcachedata, address2, whatsnew 等）
+  /templates     # Jinja2（bklist.html, sorry.html, index.html, index-sp.html, index2.html, userpagebase.html 等）
+  /static
+main.py          # Flaskアプリ構築とBlueprint登録
+requirements.txt
+app.yaml
+cron.yaml        # 必要に応じて
+dispatch.yaml    # 使う場合のみ
+
+3. ルーティング（互換最優先）
+
+公開系（public）
+
+GET / == GET /index.html（UA/viewクエリを尊重し index / index-sp を選択）
+
+GET /index2.html
+
+GET /show/<path:rest>（動的パス互換）
+
+GET /form（フォーム表示）/ POST /form（送信）
+
+GET /auth/setsid（互換のためSIDをテンプレ変数に渡す）
+
+POST /admin/storage/delete ほか管理系はPOST限定＋管理者認証
+
+API系（api）（旧 _myjson.py を分解）
+
+例：GET /api/cache/<key> → {ok:true,data:...}
+
+例：GET /api/osusume / GET /api/premium / GET /api/search-new?media=...
+
+CORSはAPIのみに限定付与（必要オリジンのみ）
+
+タスク系（tasks）
+
+POST /tasks/getjson / POST /tasks/cronworker / POST /tasks/bksort
+
+HTTP Cloud Tasks + OIDC 前提、POST限定、冪等実装
+
+4. テンプレート／静的
+
+google.appengine.ext.webapp.template → Flask render_template。
+
+既存テンプレ名は互換維持（bklist.html, sorry.html, index*.html, userpagebase.html）。
+
+テンプレへ渡す変数名も極力維持（bkdataurl, osusume, premium, newdata, namedata, auth, sid, applicationpagebase, ほか）。
+
+5. データ／キャッシュ層
+
+Datastore → google-cloud-ndb（最小変更）
+
+旧 db.Model は NDB モデルに定義し直し（Key, DateTimeProperty, JsonProperty 等で代替）。
+
+jcache の近代化
+
+公開I/F：get(key) / getdict(key) / put_json(key, obj)
+
+内部実装：Redis（Cloud Memorystore） を一次、GCS を二次としてハイブリッド化（サイズ閾値で振り分け）。
+
+旧 urlfetch は requests へ、タイムアウト/再試行/接続プールを設定。
+
+バックグラウンド更新は Cloud Tasks / Scheduler で段階的取得（ページング）・冪等化。
+
+整形責務
+
+APIは生値（数値/ISO日時）を返し、表示フォーマット（カンマ区切り等）はテンプレ/フロントで実施。
+
+6. ストレージ（Blobstore → Cloud Storage）
+
+Blobstore 依存は撤廃。google-cloud-storage で列挙・ページング・バッチ削除を実装。
+
+危険操作（全削除等）は管理者のみ、POST限定、dry-runサポート、監査ログ出力。
+
+7. メール（GAE Mail API → SMTP）
+
+**外部SMTP（465/587, TLS/SSL）**に一本化。Secret Managerで資格情報管理。
+
+POST /form は reCAPTCHAサーバ検証＋CSRF対策。メール本文にPIIを残さない運用を推奨。
+
+送信エラーは リトライ（指数バックオフ）。必要に応じCloud Tasks経由の非同期送信。
+
+8. セキュリティ／認証・認可
+
+セッション：自作実装は廃止し Flask-Session（Redis など） に。
+
+Cookie：Secure/HttpOnly/SameSite=Lax(or Strict)、secrets.token_urlsafe() でSID生成。
+
+既存の auth/sid はテンプレへ表示用に渡すのみ（権限判断に使わない）。
+
+CORS：APIのみ最小付与。HTMLレスポンスには付与しない。
+
+Tasks：OIDC（audience=URL） でCloud Tasks由来のみ受理。
+
+CSRF：フォーム / 管理系 / JSON書き込み系は CSRFトークン必須。
+
+Open Redirect対策：/show/… 外部遷移は許可ドメインのみに限定。
+
+9. 設定／秘密情報
+
+config.py ベタ書きは撤廃し、環境変数 + Secret Manager に統一。
+
+例）APP_BASE_URL, SMTPホスト/ユーザ/パス、許可オリジン、reCAPTCHA keys など。
+
+main.py 起動時に必須項目を検査し、欠落は起動失敗で明示。
+
+10. 運用ファイル・ジョブ移行
+
+backends.yaml：非推奨。必要なら サービス分割または Cloud Run を検討。
+
+queue.yaml → Cloud Tasks（キュー名・URL・SA・OIDC設定）。
+
+cron.yaml：継続可。必要に応じ Cloud Scheduler へ。
+
+dispatch.yaml：利用時は正しいファイル名で配置し、ルーティング検証。
+
+11. ロギング／エラーハンドリング
+
+構造化ログ（JSON）：イベント名・主要キー（URL, key, count, duration 等）。
+
+Flaskの @app.errorhandler で
+
+HTMLはテンプレ（sorry.html など）
+
+APIは {ok:false,error:{code,message}} を返却。
+
+タスクは冪等＋リトライ安全（同一キー二重処理はno-op）。
+
+12. 既存ファイルの移行方針（要点）
+
+allblobdelete.py：GCS版の管理者POST APIへ。dry-run/監査ログ/ページング。
+
+bksorttask.py：POST /tasks/bksort（OIDC）に実装。NDB＋チャンク処理＋jcache_service.put_json("namedata", …)。
+
+_myjson.py：/api に分解（/api/cache/<key> 等）。JSONP廃止、CORS最小化、標準json。
+
+jcache.py：I/F維持、内部をRedis＋GCSに刷新。requests化、冪等化、Tasksへ機能分割。
+
+form.py：Flask へ。GET /form・POST /form、reCAPTCHA/CSRF/SMTP化。
+
+session.py/sessionxx.py：廃止→Flask-Session＋auth_serviceで薄いラッパ（get_current_user, get_sid）。
+
+timemanager.py：zoneinfoベースに再実装。互換APIは薄く残す（to_jst, to_utc, add_months）。
+
+GqlEncoder.py：DTO/encoderに分割し直し。APIは生値返却、表示整形はフロント/テンプレへ。
+
+13. Blueprints 構成（API仕様ダイジェスト）
+
+public.py
+
+GET /, GET /index.html, GET /index2.html, GET /show/<path:rest>,
+GET /form, POST /form, GET /auth/setsid,
+POST /admin/storage/delete（管理）
+
+api.py
+
+GET /api/cache/<key> → {ok:true,data}（公開対象のみ）
+
+旧 _myjson の機能を osusume/premium/search-new 等へ分割
+
+tasks.py
+
+POST /tasks/getjson, POST /tasks/cronworker, POST /tasks/bksort
+
+OIDC検証、冪等、2xx/5xxでCloud Tasksの再試行を制御
+
+14. services 層（交換可能な内部I/F）
+
+jcache_service.py：get(key), getdict(key), put_json(key,obj)（Redis/GCS切替）
+
+auth_service.py：get_current_user(), get_sid()（Flask-Session 依存）
+
+http_service.py：fetch_json(url, *, timeout, retries)（requests）
+
+time_service.py：to_jst(dt), to_utc(dt), add_months(d, n)
+
+mail_service.py：send_mail(to, subject, body, *, bcc=[])（SMTP + Secret）
+
+15. モデル（NDB）
+
+例：jcachedata(key: String, payload: Json/Blob, updatedAt: DateTime)
+
+例：address2(...)（旧bksorttaskが参照）
+
+例：whatsnew(...)（index2向け）
+
+インデックスは index.yaml を整備（必要最小限）。
+
+16. CORS / CSRF / 認可ポリシー
+
+HTML：CORS付与なし。
+
+API：/api/* のみ、許可オリジンのみに限定。OPTIONS 応答は最小。
+
+POST系：全て CSRF必須（TasksはOIDCで代替）。
+
+管理系：認証＋権限チェック（ロール/メンバー限定）。
+
+17. テスト計画（受け入れ条件）
+
+URL互換：旧来のURLで同じ画面/データが表示されること（/show/*含む）。
+
+テンプレ変数互換：主要変数（osusume, premium, newdata, namedata など）の型/意味が一致。
+
+API：/api/* が {ok, data|error} 定形で返り、CORS/CSRF設定が期待どおり。
+
+Tasks：冪等（同じ仕事を複数回要求しても重複生成/削除がない）。
+
+削除処理：管理APIがdry-runを提供し、監査ログが出力される。
+
+時刻：JST表示/計算が一致（add_months, 末日繰り上げ等）。
+
+性能：大量データ（namedata生成等）でタイムアウト/メモリ上限を超えない（チャンク＋再入可能）。
+
+18. マイグレーション手順（推奨順）
+
+Flask骨格（main.py・Blueprint3種登録、構造化ログ・エラーハンドラ）
+
+services層（jcache/auth/http/time/mail の最小I/F確立）
+
+public移行（index / index2 / show / form のFlask化、テンプレ互換）
+
+api移行（_myjson 分解、CORS最小化、JSON定型）
+
+tasks移行（bksort/getjson/cronworker のPOST+OIDC化、冪等）
+
+NDB化（モデル/クエリ置換、index.yaml 整備）
+
+ストレージ/削除系（allblobdelete → GCS版管理API）
+
+SMTP化（Secret設定・再送/失敗処理・reCAPTCHA/CSRF）
+
+運用ファイル（queue.yaml→Cloud Tasks, cron.yaml, dispatch.yaml 確認）
+
+E2E回帰テスト（URL/表示/データ/性能/権限）
+
+19. 既知リスクと緩和
+
+大容量JSONの集計/配信：チャンク処理＋GCS二次保管＋ETag/短TTLで緩和。
+
+CORS付けすぎ：APIに限定、オリジンを明示列挙、Vary: Origin。
+
+CSRF/URL改ざん：CSRFトークン必須、外部リダイレクトの許可ドメイン制限。
+
+時刻ずれ：zoneinfo に統一、UTC保管/JST表示の原則。
+
+誤操作削除：管理APIはdry-run必須、監査ログを残す。
+
+20. 成果物（完了定義）
+
+main.py と 3 Blueprints（public/api/tasks）
+
+services 5点（jcache/auth/http/time/mail）
+
+NDBモデル（jcachedata/address2/whatsnew 等）
+
+テンプレ互換（既存HTMLのまま or 必要最低限のJinja化）
+
+運用ファイル：app.yaml、cron.yaml（必要時）、dispatch.yaml（使う場合）
+
+ドキュメント：環境変数/Secrets一覧、キュー/スケジューラ設定、OIDC設定、URL互換表、テスト観点表
+
+

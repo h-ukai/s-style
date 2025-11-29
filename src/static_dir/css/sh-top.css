@@ -1,0 +1,12 @@
+/*-- TopContentsBox--*/
+#TopContentsBox {
+	padding: 0px;
+	display: block;
+	height: auto;
+	width: 1000px;
+	margin-top: 35px;
+	margin-right: auto;
+	margin-bottom: 80px;
+	margin-left: auto;
+	text-align: center;
+}

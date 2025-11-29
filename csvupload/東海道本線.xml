@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<response xmlns="urn:heartrails:express">
+<station>
+  <prefecture>東京都</prefecture>
+  <postal>1000005</postal>
+  <x>139.767877</x>
+  <next>品川</next>
+  <prev nil="true"></prev>
+  <y>35.681101</y>
+  <line>東海道新幹線</line>
+  <name>東京</name>
+</station>
+
+
+<station>
+  <prefecture>東京都</prefecture>
+  <postal>1080075</postal>
+  <x>139.740067</x>
+  <next>新横浜</next>
+  <prev>東京</prev>
+  <y>35.629565</y>
+  <line>東海道新幹線</line>
+  <name>品川</name>
+</station>
+
+
+<station>
+  <prefecture>神奈川県</prefecture>
+  <postal>2220026</postal>
+  <x>139.617195</x>
+  <next>小田原</next>
+  <prev>品川</prev>
+  <y>35.506983</y>
+  <line>東海道新幹線</line>
+  <name>新横浜</name>
+</station>
+
+
+<station>
+  <prefecture>神奈川県</prefecture>
+  <postal>2500045</postal>
+  <x>139.154765</x>
+  <next>熱海</next>
+  <prev>新横浜</prev>
+  <y>35.256208</y>
+  <line>東海道新幹線</line>
+  <name>小田原</name>
+</station>
+
+
+<station>
+  <prefecture>静岡県</prefecture>
+  <postal>4130011</postal>
+  <x>139.078166</x>
+  <next>三島</next>
+  <prev>小田原</prev>
+  <y>35.104411</y>
+  <line>東海道新幹線</line>
+  <name>熱海</name>
+</station>
+
+
+<station>
+  <prefecture>静岡県</prefecture>
+  <postal>4110036</postal>
+  <x>138.909709</x>
+  <next>新富士</next>
+  <prev>熱海</prev>
+  <y>35.126602</y>
+  <line>東海道新幹線</line>
+  <name>三島</name>
+</station>
+
+
+<station>
+  <prefecture>静岡県</prefecture>
+  <postal>4160939</postal>
+  <x>138.663009</x>
+  <next>静岡</next>
+  <prev>三島</prev>
+  <y>35.142065</y>
+  <line>東海道新幹線</line>
+  <name>新富士</name>
+</station>
+
+
+<station>
+  <prefecture>静岡県</prefecture>
+  <postal>4200851</postal>
+  <x>138.389673</x>
+  <next>掛川</next>
+  <prev>新富士</prev>
+  <y>34.971742</y>
+  <line>東海道新幹線</line>
+  <name>静岡</name>
+</station>
+
+
+<station>
+  <prefecture>静岡県</prefecture>
+  <postal>4360029</postal>
+  <x>138.015998</x>
+  <next>浜松</next>
+  <prev>静岡</prev>
+  <y>34.769251</y>
+  <line>東海道新幹線</line>
+  <name>掛川</name>
+</station>
+
+
+<station>
+  <prefecture>静岡県</prefecture>
+  <postal>4300926</postal>
+  <x>137.735379</x>
+  <next>豊橋</next>
+  <prev>掛川</prev>
+  <y>34.70376</y>
+  <line>東海道新幹線</line>
+  <name>浜松</name>
+</station>
+
+
+<station>
+  <prefecture>愛知県</prefecture>
+  <postal>4400075</postal>
+  <x>137.381151</x>
+  <next>三河安城</next>
+  <prev>浜松</prev>
+  <y>34.762887</y>
+  <line>東海道新幹線</line>
+  <name>豊橋</name>
+</station>
+
+
+<station>
+  <prefecture>愛知県</prefecture>
+  <postal>4460054</postal>
+  <x>137.060304</x>
+  <next>名古屋</next>
+  <prev>豊橋</prev>
+  <y>34.969026</y>
+  <line>東海道新幹線</line>
+  <name>三河安城</name>
+</station>
+
+
+<station>
+  <prefecture>愛知県</prefecture>
+  <postal>4500002</postal>
+  <x>136.880959</x>
+  <next>岐阜羽島</next>
+  <prev>三河安城</prev>
+  <y>35.170751</y>
+  <line>東海道新幹線</line>
+  <name>名古屋</name>
+</station>
+
+
+<station>
+  <prefecture>岐阜県</prefecture>
+  <postal>5016257</postal>
+  <x>136.685754</x>
+  <next>米原</next>
+  <prev>名古屋</prev>
+  <y>35.315739</y>
+  <line>東海道新幹線</line>
+  <name>岐阜羽島</name>
+</station>
+
+
+<station>
+  <prefecture>滋賀県</prefecture>
+  <postal>5210012</postal>
+  <x>136.289519</x>
+  <next>京都</next>
+  <prev>岐阜羽島</prev>
+  <y>35.315057</y>
+  <line>東海道新幹線</line>
+  <name>米原</name>
+</station>
+
+
+<station>
+  <prefecture>京都府</prefecture>
+  <postal>6008215</postal>
+  <x>135.758342</x>
+  <next>新大阪</next>
+  <prev>米原</prev>
+  <y>34.984616</y>
+  <line>東海道新幹線</line>
+  <name>京都</name>
+</station>
+
+
+<station>
+  <prefecture>大阪府</prefecture>
+  <postal>5320011</postal>
+  <x>135.50009</x>
+  <next nil="true"></next>
+  <prev>京都</prev>
+  <y>34.73354</y>
+  <line>東海道新幹線</line>
+  <name>新大阪</name>
+</station>
+
+</response>

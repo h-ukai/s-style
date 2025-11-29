@@ -1,0 +1,85 @@
+#application: s-style
+#version: 1
+runtime: python27
+api_version: 1
+
+threadsafe: true
+
+automatic_scaling:
+  max_instances: 5
+
+#SDKのバージョン上げたら使うといいかも
+#libraries:
+#- name:django
+#  version: "1.4"
+
+
+builtins:
+- remote_api: on
+
+handlers:
+
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /
+  script: main.app
+
+- url: /index.html
+  script: main.app
+
+- url: /index2.html
+  script: main.app
+
+- url: /tasks/(.*)
+  script: main.app
+
+- url: /auth/(.*)
+  script: main.app
+
+- url: /editwhatsnew
+  script: main.app
+
+- url: /jsonservice
+  script: main.app
+
+- url: /mobile/form/(.*)
+  script: main.app
+
+- url: /form/(.*)
+  script: main.app
+
+- url: /show/(.*)
+  script: main.app
+
+- url: /_ah/(.*)
+  script: main.app
+
+- url: /_ah/start
+  script: main.app
+
+- url: /_ah/stop
+  script: main.app
+
+- url: /allblobdelete
+  script: main.app
+
+
+- url: (.*)/
+  mime_type: text/html
+  static_files: static_dir\1/index.html
+  upload: static_dir(.*)/index.html
+
+- url: /(.*\.html)
+  mime_type: text/html
+  static_files: static_dir/\1
+  upload: static_dir/(.*\.html)
+
+- url: /(.*)
+  static_files: static_dir/\1
+  upload: static_dir/(.*)
+
+- url: /remote_api
+  script: google.appengine.ext.remote_api.handler.application
+  login: admin

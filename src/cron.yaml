@@ -1,0 +1,30 @@
+cron:
+- description: cronworker
+  url: /tasks/cronworker
+  schedule: every 1 hours from 8:30 to 21:30
+  timezone: Asia/Tokyo
+  target: memdb
+
+- description: bksorttask
+  url: /tasks/bksort
+  schedule: every 1 hours from 8:45 to 21:45
+  timezone: Asia/Tokyo
+  target: memdb
+
+
+#- description: getOsusumebkdata
+#  url: /tasks/getOsusumebkdata
+#  schedule: every 1 hours from 8:30 to 21:30
+#  timezone: Asia/Tokyo
+
+#- description: getPremiumbkdata
+#  url: /tasks/getPremiumbkdata
+#  schedule: every 1 hours from 8:30 to 21:30
+#  timezone: Asia/Tokyo
+
+#- description: searchNewbkdata
+#  url: /tasks/searchNewbkdata
+#  schedule: every 1 hours from 8:30 to 21:30
+#  timezone: Asia/Tokyo
+  
+  

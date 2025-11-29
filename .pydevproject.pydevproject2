@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse-pydev version="1.0"?><pydev_project>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_INTERPRETER">python27</pydev_property>
+<pydev_property name="org.python.pydev.PYTHON_PROJECT_VERSION">python 2.7</pydev_property>
+<pydev_pathproperty name="org.python.pydev.PROJECT_SOURCE_PATH">
+<path>/s-style/src</path>
+</pydev_pathproperty>
+<pydev_variables_property name="org.python.pydev.PROJECT_VARIABLE_SUBSTITUTION">
+<key>GOOGLE_APP_ENGINE</key>
+<value>C:\Program Files (x86)\Google\google_appengine</value>
+</pydev_variables_property>
+<pydev_pathproperty name="org.python.pydev.PROJECT_EXTERNAL_SOURCE_PATH">
+<path>C:\Program Files (x86)\Google\google_appengine\lib\yaml</path>
+<path>${GOOGLE_APP_ENGINE}</path>
+</pydev_pathproperty>
+</pydev_project>
