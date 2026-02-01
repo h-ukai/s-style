@@ -1,0 +1,698 @@
+html,body { /*スマホ用　文字サイズ固定*/
+  -webkit-text-size-adjust: none;
+}
+body, font {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	background-color: #f5f2e9;
+}
+li {
+	list-style-type: none;
+}
+img {
+	border: none;
+}
+h2 {
+	color: #FFFFFF;
+	font-size: 19px;
+	line-height: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: #ed6c00;
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 4px;
+	text-align: center;
+	box-shadow: 0px 5px 4px rgba(0,0,0,0.40);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 3px;
+	margin-left: 0px;
+	text-shadow: 2px 2px 2px #5c5c5c;
+	clear: both;
+	float: none;
+}
+h3 {
+	font-size: 19px;
+	line-height: 1.5em;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	font-weight: bold;
+	color: #4e0900;
+	display: block;
+	text-align: center;
+	padding: 0px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+h4 {
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	color: #C8161E;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	font-size: 18px;
+	line-height: 1.5em;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+h5 {
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	color: #C8161E;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	font-size: 15px;
+	line-height: 1.5em;
+	text-align: center;
+	margin-top: 6px;
+	margin-bottom: 3px;
+}
+h6 {
+	display: block;
+	overflow: hidden;
+	font-size: 15px;
+	line-height: 1.5em;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: bold;
+	background-color: #e5dec6;
+	padding-top: 3px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+	box-shadow: 0px 2px 2px rgba(0,0,0,0.40);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+}
+
+#TojiruB a {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 150%;
+	color: #050505;
+	padding: 5px 10px;
+	background: -moz-linear-gradient(
+		top,
+		#ffffff 0%,
+		#ebebeb 50%,
+		#dbdbdb 50%,
+		#b5b5b5);
+	background: -webkit-gradient(
+		linear, left top, left bottom,
+		from(#ffffff),
+		color-stop(0.50, #ebebeb),
+		color-stop(0.50, #dbdbdb),
+		to(#b5b5b5));
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #949494;
+	-moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	-webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	box-shadow: 0px 1px 3px rgba(000,000,000,0.5),
+		inset 0px 0px 2px rgba(255,255,255,1);
+	text-shadow: 0px -1px 0px rgba(000,000,000,0.2),
+		0px 1px 0px rgba(255,255,255,1);
+	text-decoration: none;
+}
+
+.MapTitle {
+	width: 100%;
+	display: block;
+	height: auto;
+	text-align: center;
+	background-color: #CCC;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: #FFF;
+	text-decoration: none;
+	padding-top: 2px;
+	padding-bottom: 1px;
+	clear: both;
+	padding-right: 0px;
+	padding-left: 0px;
+	margin: 0px;
+	float: none;
+}
+
+
+
+/* レイアウト */
+#Wrapper {
+	width: 100%;
+	display: block;
+	margin-top: 0px;
+	padding: 0px;
+	height: auto;
+	text-align: center;
+	overflow: hidden;
+	border-top-width: 9px;
+	border-top-style: solid;
+	border-top-color: #4e0900;
+}
+#ContentsBox {
+	width: 100%;
+	display: block;
+	height: auto;
+	text-align: left;
+	overflow: hidden;
+	background-color: #FFF;
+	clear: both;
+	float: none;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #4e0900;
+	margin: 0px;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 7px;
+	padding-left: 0px;
+	font-size: 14px;
+	line-height: 1.5em;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+}
+#ContentsBox strong {
+	font-size: 15px;
+	color: #4e0900;
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	margin-top: 12px;
+	margin-right: auto;
+	margin-bottom: 12px;
+	margin-left: auto;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	line-height: 1.5em;
+	font-weight: normal;
+	width: 90%;
+}
+#ContentsBox ul {
+	font-size: 14px;
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	margin-top: 8px;
+	margin-right: auto;
+	margin-bottom: 8px;
+	margin-left: auto;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	line-height: 1.5em;
+	width: 90%;
+}
+#ContentsBox .Waku {
+	display: block;
+	border: 2px solid #ed6c00;
+	width: 95%;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 10px;
+	margin-left: auto;
+	box-shadow: 4px 4px 4px rgba(0,0,0,0.40);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+	border-radius: 10px;        /* CSS3草案 */
+	-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */
+	-moz-border-radius: 10px;   /* Firefox用 */
+	background-color: #ffffff;
+	overflow: hidden;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+}
+#ContentsBox .Koumoku {
+	display: block;
+	margin-top: 5px;
+	margin-right: 5%;
+	margin-bottom: 5px;
+	margin-left: 5%;
+	padding-top: 5px;
+	padding-right: 0px;
+	padding-bottom: 5px;
+	padding-left: 0px;
+	border-top-width: 1px;
+	border-top-style: dotted;
+	border-top-color: #CCC;
+	font-size: 13px;
+	line-height: 1.5em;
+	overflow: hidden;
+}
+#ContentsBox .MapLink {
+	display: inline-block;
+	font-size: 14px;
+	line-height: 1.5em;
+	color: #FFF;
+	text-decoration: none;
+	font-weight: bold;
+	background-color: #ed6c00;
+	margin-top: 5px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	padding-top: 2px;
+	padding-right: 8px;
+	padding-bottom: 1px;
+	padding-left: 8px;
+	border-radius: 5px;        /* CSS3草案 */
+	-webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+	-moz-border-radius: 5px;   /* Firefox用 */
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	text-align: center;
+}
+.LeftColumn {
+	display: block;
+	overflow: hidden;
+	float: left;
+	width: 35%;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5%;
+}
+.RightColumn {
+	display: block;
+	overflow: hidden;
+	padding: 0px;
+	float: right;
+	text-align: left;
+	width: 55%;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 5%;
+}
+
+
+
+/* ヘッダーHeaderBox */
+#HeaderBox {
+	display: block;
+	width: 100%;
+	margin: 0px;
+	height: auto;
+	overflow: hidden;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+#HeaderBox .Logo {
+	background-image: url(../cmn_img/logo.png);
+	background-repeat: no-repeat;
+	display: block;
+	height: 99px;
+	width: 162px;
+	float: left;
+	text-indent: -999em;
+	padding: 0px;
+	margin-top: 13px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 12px;
+}
+#HeaderBox .HeadNavi {
+	display: block;
+	position: fixed;
+	top: -10px;
+	overflow: hidden;
+	z-index: 1000;
+	float: right;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 4px;
+	width: 100%;
+	height: auto;
+	margin: 0px;
+}
+#HeaderBox .HeadNavi .PC {
+	display: block;
+	background-color: #FFF;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #a2a2a2;
+	border-bottom-color: #a2a2a2;
+	border-left-color: #a2a2a2;
+	border-radius: 10px;        /* CSS3草案 */
+	-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */
+	-moz-border-radius: 10px;   /* Firefox用 */
+	padding-top: 15px;
+	padding-right: 8px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #4e0900;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.20);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+	font-size: 12px;
+	float: right;
+	margin-top: 0px;
+	margin-right: 2px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+}
+#HeaderBox .HeadNavi .Okiniiri {
+	display: block;
+	background-color: #ff9000;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-right-color: #4e0900;
+	border-bottom-color: #4e0900;
+	border-left-color: #4e0900;
+	border-radius: 10px;        /* CSS3草案 */
+	-webkit-border-radius: 10px;    /* Safari,Google Chrome用 */
+	-moz-border-radius: 10px;   /* Firefox用 */
+	padding-top: 15px;
+	padding-right: 8px;
+	padding-bottom: 2px;
+	padding-left: 8px;
+	text-decoration: none;
+	font-weight: bold;
+	color: #FFFFFF;
+	box-shadow: 2px 2px 2px rgba(0,0,0,0.20);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+	font-size: 12px;
+	float: right;
+	margin-top: 0px;
+	margin-right: 8px;
+	margin-bottom: 0px;
+	margin-left: 2px;
+}
+#HeaderBox h1 {
+	font-size: 11px;
+	line-height: 1.5em;
+	font-weight: normal;
+	color: #898989;
+	display: block;
+	padding: 0px;
+	margin-top: 37px;
+	margin-right: 6px;
+	float: right;
+	overflow: hidden;
+	text-align: left;
+	width: 40%;
+}
+#HeaderBox .TelStyle {
+	display: block;
+	clear: both;
+	margin-top: 3px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+	text-align: center;
+	background-color: #FFF;
+	padding-top: 5px;
+	padding-bottom: 2px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+#HeaderBox .TelStyle em {
+	display: block;
+	padding: 0px;
+	font-size: 18px;
+	line-height: 1.3em;
+	color: #4e0900;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	font-family: "ＭＳ Ｐ明朝", "MS PMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", serif;
+	margin: 0px;
+}
+
+#HeaderBox .TelStyle Strong {
+	display: block;
+	padding: 0px;
+	font-size: 26px;
+	line-height: 1.3em;
+	color: #68dd00;
+	margin: 0px;
+}
+#HeaderBox .TelStyle Strong a {
+	color: #68dd00;
+	text-decoration: none;
+}
+
+
+
+/* NaviStyle */
+.NaviStyle-Rosen {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_rosen.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+.NaviStyle-Chiiki {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_chiiki.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+.NaviStyle-Gaku {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_gaku.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+.NaviStyle-Tochi {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_tochi.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+.NaviStyle-Todate {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_todate.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+.NaviStyle-Mansion {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_mansion.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+.NaviStyle-Shueki {
+	display: block;
+	text-align: left;
+	background-image: url(../cmn_img/b_shueki.png);
+	background-position: left center;
+	background-repeat: no-repeat;
+	font-size: 21px;
+	line-height: 67px;
+	text-indent: 75px;
+	height: 67px;
+	color: #000;
+	text-decoration: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* NaviStyle2 */
+.NaviStyle2 {
+	display: block;
+	margin: 0px;
+	background-color: #FFF;
+	float: left;
+	width: 49%;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	border: 1px solid #d5d5d6;
+	font-size: 15px;
+	line-height: 41px;
+	height: 41px;
+	background-image: url(../cmn_img/yajirushi_a.png);
+	background-repeat: no-repeat;
+	background-position: 7px center;
+	text-align: left;
+	text-indent: 24px;
+	color: #000;
+	text-decoration: none;
+}
+
+.TelNo {
+	display: block;
+	background-image: url(../cmn_img/tel.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 36px;
+	margin: 0px;
+	padding: 0px;
+	text-indent: -999em;
+}
+.Form-Member {
+	display: block;
+	height: 106px;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	background: rgb(241,141,0); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIxJSIgc3RvcC1jb2xvcj0iI2YxOGQwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlOTQ1MGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(241,141,0,1) 1%, rgba(233,69,10,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(241,141,0,1)), color-stop(100%,rgba(233,69,10,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(241,141,0,1) 1%,rgba(233,69,10,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(241,141,0,1) 1%,rgba(233,69,10,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(241,141,0,1) 1%,rgba(233,69,10,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(241,141,0,1) 1%,rgba(233,69,10,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f18d00', endColorstr='#e9450a',GradientType=0 ); /* IE6-8 */
+	padding: 0px;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.40);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+}
+.Form-Member li a {
+	display: block;
+	background-image: url(../cmn_img/form_kaiin.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0px;
+	height: 106px;
+	width: 100%;
+	margin: 0px;
+}
+.Form-Buken {
+	display: block;
+	height: 90px;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	background: rgb(188,212,0); /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2JjZDQwMCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMGE4M2IiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  rgba(188,212,0,1) 0%, rgba(0,168,59,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(188,212,0,1)), color-stop(100%,rgba(0,168,59,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(188,212,0,1) 0%,rgba(0,168,59,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(188,212,0,1) 0%,rgba(0,168,59,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(188,212,0,1) 0%,rgba(0,168,59,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(188,212,0,1) 0%,rgba(0,168,59,1) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bcd400', endColorstr='#00a83b',GradientType=0 ); /* IE6-8 */
+	margin-right: 10px;
+	margin-left: 10px;
+	padding: 0px;
+	border: 4px solid #FFF;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.40);
+	box-shadow: progid:DXImageTransform.Microsoft.Shadow(color='#969696', Direction=145, Strength=3);
+}
+.Form-Buken li a {
+	display: block;
+	background-image: url(../cmn_img/form_buken.png);
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0px;
+	height: 90px;
+	width: 100%;
+	margin: 0px;
+}
+
+
+
+/* フッターFooterBox */
+#FooterBox {
+	display: block;
+	text-align: center;
+	height: auto;
+	width: 100%;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 30px;
+	margin-left: 0px;
+	overflow: hidden;
+}
+#FooterBox ul {
+	display: block;
+	padding: 0px;
+	margin: 0px;
+}
+#FooterBox li a {
+	display: block;
+	margin: 0px;
+	font-size: 16px;
+	line-height: 1.5em;
+	color: #4e0900;
+	padding-top: 6px;
+	padding-bottom: 4px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #9fa0a0;
+	text-decoration: none;
+}
+#Copyright {
+	display: block;
+	font-size: 10px;
+	line-height: 1.5em;
+	color: #FFFFFF;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	text-decoration: none;
+	background-color: #4e0900;
+	margin-top: 15px;
+	margin-bottom: 0px;
+	margin-right: 0px;
+	margin-left: 0px;
+	padding-right: 0px;
+	padding-left: 0px;
+}

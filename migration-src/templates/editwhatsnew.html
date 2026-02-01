@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>edit wat's new</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css" media="all">
+<script type="text/javascript" src="/js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+function getbk(){
+//https://s-style-hrd.appspot.com/jsonservice?com=bkdataopenshow&corp=s-style&media=web&bkID=4692
+	if ( !$("#inputbkID").val()){
+		alert("物件番号を入力してください");
+		return
+	}
+    $.ajax({
+        url: "https://s-style-hrd.appspot.com/jsonservice" ,
+        dataType: "jsonp",
+        data: {
+        	com:"bkdataopenshow",
+        	corp:"s-style",
+        	media:"web",
+            bkID:$("#inputbkID").val()
+        },
+        success: function(data) {
+        		if (data.bkdata){
+        			setdata(data);
+        		}
+        		else{alert("データの取得に失敗しました\n（物件番号が間違っています）");}
+        }
+ 	});
+ 	return false;
+}
+function setdata(item,pos){
+	$("#inputbkID").val(item.bkdata["物件番号"]);
+	$("#inputdate").val(item.bkdata["変更年月日"].split(" ")[0]);
+	$("#inputtext").val(item.bkdata["所在地名1"] + item.bkdata["所在地名2"] + item.bkdata["建物名"] + item.bkdata["間取部屋数（1）"] + item.bkdata["間取タイプ（1）"] + " " + item.bkdata["物件種目"] + " を更新致しました。");
+	$("#addfrm").submit();
+}
+
+</script>
+</head>
+<body>
+	<div style="padding:30px">
+	<br />
+	<h1 class="class-title-article-top">新着情報管理</h1>
+	<br />
+<form action="/editwhatsnew" method="POST" id="addfrm" >
+	物件番号：
+	<input type="text" name="bkID" id="inputbkID" />
+	<input type="hidden" name="date" id="inputdate" />
+	<input type="hidden" name="text" id="inputtext" />
+	<input type="hidden" name="enableshow" id="inputenableshow" value="false"/>
+	<input type="hidden" name="isadd" id="inputadd" value="True"/>
+	<input type="button" name="" onclick="javascript:getbk();" value="追加" />
+</form>
+<hr />
+	<table name="editarea"  id="editarea">
+	<tr>
+		<td><table><tr><td width="30" >表示</td><td width="50" >物件番号</td><td width="80" >日付</td><td width="200" >本文</td><td width="50" > </td></tr></table></td>
+	</tr>
+{% for item in list %}
+	<tr><td>
+		<form action="/editwhatsnew" method="POST">
+			<table><tr>
+			<td width="30"><input type="hidden" name="key" value="{{item.datakey}}"/><input type="checkbox" name="enableshow" value="{{item.enabeshow}}"/></td>
+			<td width="50"><input type="text" name="bkID" value="{{item.bkID}}" style="width:90%"/></td>
+			<td width="80"><input type="text" name="date" value="{{item.date}}" style="width:90%"/></td>
+			<td width="200"><input type="text" name="text"  value="{{item.text}}" style="width:90%"/></td>
+			<td><input type="submit" name="submit" value="削除"/> <input type="submit" name="submit" value="保存"/></td>
+		</tr></table>
+		</form>
+	</td></tr>
+{% endfor %}
+	</table>
+
+</div>
+</body>
+</html>

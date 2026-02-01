@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+<title>お問い合わせ・メンバー会員登録｜名古屋市千種区不動産情報S-Style（エススタイル）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" >
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="css/sh-styles.css" rel="stylesheet" type="text/css" media="all">
+<!--スライダー-->
+<script src="js/flipsnap.js"></script>
+<!--お気に入りボタンの表示-->
+<script type='text/javascript'>
+<!--//
+function BookMark() {
+    alert("iPhoneの方は画面下、中央にあるアイコンを押し、[ ブックマーク ]を選択して登録して下さい。　Android(4.*)の方は画面両サイドを触ったままにするとメニューが表示されるので、そのまま★印のアイコンを選択し登録して下さい。");
+}
+</script>
+</head>
+
+<body leftmargin="0" marginheight="0" marginwidth="0" topmargin="0">
+
+<!--Wrapper-->
+<div id="Wrapper">
+
+<!--HeaderBox-->
+<div id="HeaderBox">
+<ul class="HeadNavi">
+<a href="javascript:void BookMark();" class="Okiniiri">お気に入りに追加</a>
+<a href="https://www.s-style.ne.jp/" class="PC">PCサイトへ</a>
+</ul>
+<a href="https://www.s-style.ne.jp/" class="Logo">名古屋市千種区の不動産S-Style</a>
+<h1>名古屋市千種区を中心にマンション・土地・新築・中古一戸建、不動産情報盛りだくさん！！</h1>
+<ul class="TelStyle">
+<em>お気軽にお電話ください</em>
+<strong>tel 052-751-5900</strong>
+</ul>
+</div><!--HeaderBox-->
+
+
+<h2>メンバーご登録・お問い合わせフォーム</h2>
+
+<!--ArticleBox-->
+<div id="ArticleBox">
+
+
+<ul id="MeritBox">
+以下のフォームからご登録頂いたお客様には、
+ホームページには載っていない不動産物件を特別にご紹介致します！
+</ul>
+
+
+<!--フォーム入力-->
+<ul id="FormBox">
+<p>ご希望のユーザーID ： （記入例） yamada001</p>
+<input type="text" id="new_login_id" name="new_login_id" value="" size="40">
+<p>ご希望のパスワード ： （記入例） pwd@11dd</p>
+<input type="password" name="new_login_pwd" id="new_login_pwd" size="40">
+<p>連絡先メールアドレス<br />（記入例） mansion@chikusaku-mansion.com</p>
+<input type="text" name="new_user_email" id="new_user_email" size="40">
+<input type="hidden" id="corp_name" name="corp_name" value="s-style">
+<input type="hidden" id="branch_name" name="branch_name" value="hon">
+<input type="hidden" id="sitename" name="sitename" value="www.s-style.ne.jp">
+<input type="hidden" id="togo" name="togo" value="%2Fshow%2Fs-style%2Fhon%2Fwww.s-style.ne.jp%2Fbkdata%2Farticle.html%3Fmedia%3Dweb%26id%3D{{data.bkdata.bkID}}">
+<input type="hidden" id="reqnum" name="reqnum" value="{{data.bkdata.bkID}}">
+<input type="hidden" id="reqtext" name="reqtext" value="{{reqtext}}">
+<input type="hidden" id="sid" name="sid" value="{{sid}}">
+<br /><br />
+<input type="submit" id="new_regist" name="new_regist" value="この内容で送信する">
+</ul><!--フォーム入力-->
+
+
+{% if submit %}
+<center>
+<br />
+<br />
+<br />
+<br />
+<b>送信完了</b><br />
+<br />
+<a name="comp"></a>
+お問い合せありがとうございました。<br />
+追ってご連絡差し上げますので、しばらくお待ちください。<br />
+<br />
+<br />
+<br />
+</center>
+{% endif %}
+
+
+</div><!--ArticleBox-->
+
+
+
+<h3>ご希望の不動産をお探しします！<br />お気軽にお電話ください</h3>
+<a href="tel:052-751-5900" class="TelNo">tel052-751-5900</a>
+<br />
+
+
+<div id="FooterBox">
+<ul>
+<li><a href="profile-sp.html">運営会社紹介</a></li>
+<li><a href="https://s-style-hrd.appspot.com/sendmsg/s-style/hon/www.s-style.ne.jp/sendmsg.html?userpagebase=userpagebase-sp.html&ref=chiiki-sp-2">お問い合わせフォーム</a></li>
+<li><a href="kounyu-sp.html">マイホーム購入までの流れ</a></li>
+<li><a href="https://www.s-style.ne.jp/baikyaku/">売却（買取・仲介）の流れ</a></li>
+<li><a href="https://www.s-style.ne.jp/yuukou/">土地の有効活用</a></li>
+<li><a href="privacy-sp.html">プライバシーポリシー</a></li>
+</ul>
+</div>
+<ul id="Copyright">Copyright(C)2006 S-Style All rights reserved.</ul>
+
+</div><!--Wrapper-->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7545989-4']);
+  _gaq.push(['_setDomainName', 'none']);  
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('http:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+
+</html>

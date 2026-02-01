@@ -1,0 +1,7 @@
+# s-style Python 3.11 Cron 設定
+cron:
+# JSONキャッシュ更新（毎時実行）
+- description: "update json cache"
+  url: /test/tasks/cronworker
+  schedule: every 1 hours
+  target: test-service

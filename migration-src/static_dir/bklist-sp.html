@@ -1,0 +1,296 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+
+<head>
+<title>{{data.listKey}}｜名古屋市千種区不動産情報S-Style（エススタイル）</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" >
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="https://www.s-style.ne.jp/css/sh-styles.css" rel="stylesheet" type="text/css" media="all">
+<!--要素ごとでロールオーバー-->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.s-style.ne.jp/js/rollover.js"></script>
+<script src="https://www.google.com/jsapi"></script>
+<script>google.load("jquery", "1.7.1");</script>
+<!--お気に入りボタンの表示-->
+<script type='text/javascript'>
+<!--//
+function BookMark() {
+    alert("iPhoneの方は画面下、中央にあるアイコンを押し、[ ブックマーク ]を選択して登録して下さい。　Android(4.*)の方は画面両サイドを触ったままにするとメニューが表示されるので、そのまま★印のアイコンを選択し登録して下さい。");
+}
+</script>
+</head>
+
+<body leftmargin="0" marginheight="0" marginwidth="0" topmargin="0">
+
+<!--Wrapper-->
+<div id="Wrapper">
+
+<!--HeaderBox-->
+<div id="HeaderBox">
+<ul class="HeadNavi">
+<a href="javascript:void BookMark();" class="Okiniiri">お気に入りに追加</a>
+<a href="{{data.pcsite}}" class="PC">PCサイトへ</a>
+</ul>
+<a href="https://www.s-style.ne.jp/" class="Logo">名古屋市千種区の不動産S-Style</a>
+<h1>名古屋市千種区を中心にマンション・土地・新築・中古一戸建、不動産情報盛りだくさん！！</h1>
+<ul class="TelStyle">
+<em>お気軽にお電話ください</em>
+<strong>tel 052-751-5900</strong>
+</ul>
+</div><!--HeaderBox-->
+
+
+
+<h2>{{data.listKey}}</h2>
+
+{% for bkdata in data.bkdatalist %}
+
+<!--bklistBox-->
+<div class="bklistBox">
+<div class="boxLink">
+<ul>
+<h3>【{{bkdata.bkdata.bkID}}】{{bkdata.bkdata.ttmnmi}}　{{bkdata.bkdata.tdufknmi|default:""}}{{bkdata.bkdata.shzicmi1|default:""}}{{bkdata.bkdata.shzicmi2|default:""}}</h3>
+<div class="ThumbnailPhoto">
+<a href="{{data.bkdataurl}}{{bkdata.bkdata.bkID}}"><img src="{{bkdata.picdata.0.bloburl}}" alt="#" width="95" border="0"></a>
+</div>
+<div class="ThumbnailText">
+<p>
+●交通／
+{{bkdata.bkdata.ekmi1|default:""}} {{bkdata.bkdata.ekmi2|default:""}} {{bkdata.bkdata.ekmi3|default:""}} 駅
+●間取／
+　　　　　　　　　　{{bkdata.bkdata.mdrHysu1|floatformat|default:""}}{{bkdata.bkdata.mdrTyp1|default:""}}
+                    {% if bkdata.bkdata.stTyp11%}
+                    {% if bkdata.bkdata.stHrs11 %}
+                    {{bkdata.bkdata.stHrs11}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu11 %}
+                    ×{{bkdata.bkdata.stsu11}}
+                    {% endif %}
+                    {% endif %}
+                     
+                    {% if bkdata.bkdata.stTyp21 %}
+                    {% if bkdata.bkdata.stHrs21 %}
+                    {{bkdata.bkdata.stHrs21}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu21 %}
+                    ×{{bkdata.bkdata.stsu21}}
+                    {% endif %}
+                    {% endif %}
+                     
+                    {% if bkdata.bkdata.stTyp31 %}
+                    {% if bkdata.bkdata.stHrs31 %}
+                    {{bkdata.bkdata.stHrs31}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu31 %}
+                    ×{{bkdata.bkdata.stsu31}}
+                    {% endif %}
+                    {% endif %}
+                     
+                    {% if bkdata.bkdata.stTyp41 %}
+                    {% if bkdata.bkdata.stHrs41 %}
+                    {{bkdata.stHrs41}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu41 %}
+                    ×{{bkdata.bkdata.stsu41}}
+                    {% endif %}
+                    {% endif %}
+                    
+                    {% if bkdata.bkdata.stTyp51 %}
+                    {% if bkdata.bkdata.stHrs51 %}
+                    {{bkdata.bkdata.stHrs51}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu51 %}
+                    ×{{bkdata.bkdata.stsu51}}
+                    {% endif %}
+                    {% endif %}
+                    
+                    {% if bkdata.bkdata.stShziki61 %}
+                    {% if bkdata.bkdata.stHrs61 %}
+                    {{bkdata.bkdata.stHrs61}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu61 %}
+                    ×{{bkdata.bkdata.stsu61}}
+                    {% endif %}
+                    {% endif %}
+                    
+                    {% if bkdata.bkdata.stTyp71 %}
+                    {% if bkdata.bkdata.stHrs71 %}
+                    {{bkdata.bkdata.stHrs71}}帖
+                    {% endif %}
+                    {% if bkdata.bkdata.stsu71 %}
+                    ×{{bkdata.bkdata.stsu71}}
+                    {% endif %}
+                    {% endif %}                  
+●最寄駅／
+                  {% if bkdata.bkdata.ekmi1 %} 
+                    {{bkdata.bkdata.ensnmi1}}
+                    {{bkdata.bkdata.ekmi1}}駅
+                    {% if bkdata.bkdata.thHn11 %}
+                    徒歩約{{bkdata.bkdata.thHn11|floatformat}}分
+                    {% endif %}
+                    {% if bkdata.bkdata.thM21 %}
+                    徒歩約{{bkdata.thM21|floatformat:"-2"}}ｍ
+                    {% endif %}
+                    {% if bkdata.bkdata.bs1 %}
+                    {{bkdata.bkdata.bs1|floatformat}}
+                    {% endif %}
+                    {% if bkdata.bkdata.bsRsnmi1 %}
+                    {{bbkdata.kdata.bsRsnmi1|floatformat}}
+                    {% endif %}
+                    {% if bkdata.bkdata.bstiMishu1 %}
+                    {{bkdata.bstiMishu1}}
+                    {% endif %}
+                    {% if bkdata.bkdata.tihHn1 %}
+                    徒歩 {{bkdata.bkdata.tihHn1|floatformat}} 分
+                    {% endif %}
+                    {% if bkdata.bkdata.tihM1 %}
+                    徒歩 {{bkdata.tihM1|floatformat:"-2"}} ｍ
+                    {% endif %}
+                    {% if bkdata.bkdata.krmKm1 %}
+                    車 {{bkdata.bkdata.krmKm1|floatformat:"-2"}} km
+                    {% endif %}
+                  {% endif %}
+                  {% if bkdata.bkdat.ekmi2 %}
+                    {{bkdata.bkdata.ensnmi2}}
+                    {{bkdata.bkdata.ekmi2}}駅
+                    {% if bkdata.bkdata.thHn12 %}
+                    徒歩約{{bkdata.bkdata.thHn12|floatformat}}分
+                    {% endif %}
+                    {% if bkdata.bkdata.thM22 %}
+                    徒歩約{{bkdata.bkdata.thM22|floatformat:"-2"}}ｍ
+                    {% endif %}
+                    {% if bkdata.bkdata.bs2 %}
+                    {{bkdata.bkdata.bs2}}
+                    {% endif %}
+                    {% if bkdata.bkdata.bsRsnmi2 %}
+                    {{bkdata.bkdata.bsRsnmi2}}
+                    {% endif %}
+                    {% if bkdata.bkdata.bstiMishu2%}
+                    {{bkdata.bkdata.bstiMishu2}}
+                    {% endif %}
+                    {% if bkdata.bkdata.tihHn2 %}
+                    徒歩 {{bkdata.bkdata.tihHn2|floatformat}} 分
+                    {% endif %}
+                    {% if bkdata.bkdata.tihM2 %}
+                    徒歩 {{bkdata.bkdata.tihM2|floatformat:"-2"}} ｍ
+                    {% endif %}
+                    {% if bkdata.bkdata.krmKm2 %}
+                    車 {{bkdata.bkdata.krmKm2|floatformat:"-2"}} km
+                    {% endif %}
+                  {% endif %}
+                  {% if bkdata.bkdata.ekmi3 %} <br />
+                    {{bkdata.bkdata.ensnmi3}}
+                    {{bkdata.bkdata.ekmi3}}駅
+                    {% if bkdata.bkdata.thHn13 %}
+                    徒歩約{{bkdata.bkdata.thHn13|floatformat}}分
+                    {% endif %}
+                    {% if bkdata.bkdata.thM23 %}
+                    徒歩約{{bkdata.bkdata.thM23|floatformat:"-2"}}ｍ
+                    {% endif %}
+                    {% if bkdata.bkdata.bs3 %}
+                    {{bkdata.bkdata.bs3}}
+                    {% endif %}
+                    {% if bkdata.bkdata.bsRsnmi3 %}
+                    {{bkdata.bkdata.bsRsnmi3}}
+                    {% endif %}
+                    {% if bkdata.bkdata.bstiMishu3%}
+                    {{bkdata.bkdata.bstiMishu3}}
+                    {% endif %}
+                    {% if bkdata.bkdata.tihHn3 %}
+                    徒歩 {{bkdata.bkdata.tihHn3|floatformat}} 分
+                    {% endif %}
+                    {% if bkdata.bkdata.tihM3 %}
+                    徒歩 {{bkdata.bkdata.tihM3|floatformat:"-2"}} ｍ
+                    {% endif %}
+                    {% if bkdata.bkdata.krmKm3 %}
+                    車 {{bkdata.bkdata.krmKm3|floatformat:"-2"}} km
+                    {% endif %}
+                    {% endif %}
+                    {% if bkdata.bkdata.sntKutuShdn %}
+                    {{bkdata.bkdata.sntKutuShdn}}
+                    {% endif %}
+                    {% if bkdata.bkdata.kutuHn %}
+                    {{bkdata.bkdata.kutuHn|floatformat}}分
+                    {% endif %}
+                    {% if bkdata.bkdata.kutuM %}
+                    {{bkdata.bkdata.kutuM|floatformat:"-2"}}ｍ
+                    {% endif %}
+</p>
+<li class="Price">{{bkdata.kakakuM|default:""}}万円</li>
+</div>
+
+<!--アイコン-->
+<li class="IconBox">
+{% ifequal bkdata.bkdata.bbchntikbn "賃貸" %}<img src="/cmn_img/icon/chintai.jpg" alt="賃貸" />{% endifequal %}
+{% ifequal bkdata.bkdata.dtsyuri "事例" %}<img src="/cmn_img/icon/seiyakuzumi.jpg" alt="成約済み" width="69" />{% endifequal %}
+{% ifequal bkdata.bkdata.bkknShmk "中古戸建" %}<img src="/cmn_img/icon/chukotodate.jpg" alt="中古戸建" width="69" />{% endifequal %}
+{% ifequal bkdata.bkdata.bkknShmk "新築戸建" %}<img src="/cmn_img/icon/shinchikutodate.jpg" alt="新築戸建" width="69" />{% endifequal %}
+{% ifequal bkdata.bkdata.bkknShmk "売地" %}<img src="/cmn_img/icon/tochi.jpg" alt="土地" alt="売地" width="69" />{% endifequal %}
+{% ifequal bkdata.bkdata.bkknShmk "中古マンション" %}<img src="/cmn_img/icon/chukomanshon.jpg" alt="中古マンション" width="69" />{% endifequal %}
+{% ifequal bkdata.bkdata.bbchntikbn "売買" %}{% ifequal bkdata.bkdata.bkknShmk "事務所" %}<img src="/cmn_img/icon/urijimusyo.jpg" alt="売事務所" width="69" />{% endifequal %}{% endifequal %}
+{% for icon in bkdata.bkdata.icons %}
+{% ifequal icon "リフォーム" %}<img src="/cmn_img/icon/reform.jpg" alt="リフォーム" width="69" />{% endifequal %}
+{% ifequal icon "収益" %}<img src="/cmn_img/icon/shueki.jpg" alt="収益" width="69" />{% endifequal %}
+{% ifequal icon "テナント" %}<img src="/cmn_img/icon/tenanto.jpg" alt="テナント" width="69" />{% endifequal %}
+{% endfor %}
+{% if bkdata.picdata %}<img src="/cmn_img/icon/photo.jpg" alt="" width="69" />{% endif %}
+</li><!--アイコン-->
+
+</ul>
+</div>
+</div><!--bklistBox-->
+
+{% endfor %}
+
+
+
+<!--NextBackLinkBox-->
+<div id="NextBackLinkBox">
+{% if data.offsetpre %}
+<a href="{{data.offsetpre}}">◀前の10件を見る</a>
+{% endif %}
+　｜　
+{% if data.offsetnext %}
+<a href="{{data.offsetnext}}">次の10件を見る▶</a>
+{% endif %}
+</div><!--NextBackLinkBox-->
+
+
+
+<h3>ご希望の不動産をお探しします！<br />お気軽にお電話ください</h3>
+<a href="tel:052-751-5900" class="TelNo">tel052-751-5900</a>
+<ul class="Form-Member"><li><a href="https://s-style-hrd.appspot.com/sendmsg/s-style/hon/www.s-style.ne.jp/sendmsg.html?userpagebase=userpagebase-sp.html&ref=bklist-sp-2"></a></li></ul>
+
+
+
+<div id="FooterBox">
+<ul>
+<li><a href="profile.html">運営会社紹介</a></li>
+<li><a href="https://s-style-hrd.appspot.com/sendmsg/s-style/hon/www.s-style.ne.jp/sendmsg.html?userpagebase=userpagebase-sp.html&ref=bklist-sp-2">お問い合わせフォーム</a></li>
+<li><a href="kounyu.html">マイホーム購入までの流れ</a></li>
+<li><a href="https://www.s-style.ne.jp/baikyaku-sp.html">売却（買取・仲介）の流れ</a></li>
+<li><a href="https://www.s-style.ne.jp/yuukou-sp.html">土地の有効活用</a></li>
+<li><a href="https://www.s-style.ne.jp/privacy-sp.html">プライバシーポリシー</a></li>
+</ul>
+</div>
+<ul id="Copyright">Copyright(C)2006 S-Style All rights reserved.</ul>
+
+</div><!--Wrapper-->
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-7545989-4']);
+  _gaq.push(['_setDomainName', 'none']);  
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('http:' == document.location.protocol ? 'https://ssl' : 'https://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</body>
+
+</html>

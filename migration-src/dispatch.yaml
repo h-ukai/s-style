@@ -1,0 +1,4 @@
+# dispatch.yaml - /test/* を test-service にルーティング
+dispatch:
+  - url: "*/test/*"
+    service: test-service
